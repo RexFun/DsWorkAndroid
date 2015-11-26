@@ -9,6 +9,12 @@ import android.support.v4.util.LruCache;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.rex.dsworkandroidlibrary.util.DiskLruCache;
+import com.rex.dsworkandroidlibrary.util.MD5Util;
+import com.rex.dsworkandroidlibrary.util.WorkUtil;
+import com.rex.dsworkandroidlibrary.util.webutil.HttpActionObj;
+import com.rex.dsworkandroidlibrary.util.webutil.HttpUtil;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -20,11 +26,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-import dswork.android.lib.core.util.DiskLruCache;
-import dswork.android.lib.core.util.MD5Util;
-import dswork.android.lib.core.util.WorkUtil;
-import dswork.android.lib.core.util.webutil.HttpActionObj;
-import dswork.android.lib.core.util.webutil.HttpUtil;
 
 public class BitmapLoader
 {
@@ -92,7 +93,7 @@ public class BitmapLoader
 	{
 		try
 		{
-			String key = MD5Util.hashKeyForDisk(imageUrl);  
+			String key = MD5Util.hashKeyForDisk(imageUrl);
 	        DiskLruCache.Editor editor = mDiskLruCache.edit(key);  
 	        if (editor != null) 
 	        {  

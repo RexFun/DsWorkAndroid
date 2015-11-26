@@ -12,13 +12,12 @@ import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.rex.dsworkandroidlibrary.R;
+import com.rex.dsworkandroidlibrary.db.BaseModel;
+
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
-
-import dswork.android.lib.core.R;
-import dswork.android.lib.core.db.BaseModel;
-import dswork.android.lib.core.ui.MultiCheck.MultiCheckListView.ViewCache;
 
 public class MultiCheckAdapter extends BaseAdapter 
 {
@@ -27,7 +26,7 @@ public class MultiCheckAdapter extends BaseAdapter
 	private int itemLayoutRes;//绑定的条目布局资源(如:R.layout.item)
 	private String[] from;
 	private int[] to;
-	private ViewCache vc;
+	private MultiCheckListView.ViewCache vc;
 	private int itemIdRes;//每条item项的主键TextView资源
 	private int itemChkRes;//每条item项的CheckBox资源
 	private int itemMenuRes;//每条item项的ImageButton资源
@@ -47,7 +46,7 @@ public class MultiCheckAdapter extends BaseAdapter
 	 * @param to 属性名绑定的View控件id,整形数组int[]
 	 * @param vc ViewCache视图缓存对象
 	 */
-	public MultiCheckAdapter(Context ctx, List dataList, int itemLayoutRes, String[] from, int[] to, ViewCache vc) 
+	public MultiCheckAdapter(Context ctx, List dataList, int itemLayoutRes, String[] from, int[] to, MultiCheckListView.ViewCache vc)
 	{
 		this.ctx = ctx;
 		this.dataList = dataList;
@@ -94,7 +93,7 @@ public class MultiCheckAdapter extends BaseAdapter
 		BaseModel o = (BaseModel) dataList.get(position);
 		itemView = inflater.inflate(itemLayoutRes, null);
 		//找到显示控件
-		ViewCache cache = new ViewCache();
+		MultiCheckListView.ViewCache cache = new MultiCheckListView.ViewCache();
 		cache.chk = (CheckBox)itemView.findViewById(itemChkRes);
 		cache.idView = (TextView)itemView.findViewById(itemIdRes);
 		cache.itemMenu = (ImageButton) itemView.findViewById(itemMenuRes);

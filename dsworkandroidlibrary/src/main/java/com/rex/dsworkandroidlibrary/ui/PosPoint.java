@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import dswork.android.lib.core.R;
+import com.rex.dsworkandroidlibrary.R;
+
 
 public class PosPoint extends LinearLayout
 {

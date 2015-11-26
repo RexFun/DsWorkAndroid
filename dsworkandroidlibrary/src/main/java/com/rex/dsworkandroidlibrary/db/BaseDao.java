@@ -5,13 +5,14 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.rex.dsworkandroidlibrary.util.SqlUtil;
+
 import org.apache.commons.beanutils.ConvertUtils;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-import dswork.android.lib.core.util.SqlUtil;
 
 public abstract class BaseDao<T, PK extends Serializable>
 {

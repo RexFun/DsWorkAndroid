@@ -5,13 +5,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import dswork.android.lib.core.ui.MultiCheck.MultiCheckListView.MultiCheckActionModeListener;
 
 public class MultiCheckActionMode implements ActionMode.Callback 
 {
 	private int menuRes;
 	private MultiCheckListView lv;
-	private MultiCheckActionModeListener listener;
+	private MultiCheckListView.MultiCheckActionModeListener listener;
 
 	/**
 	 * 构造器
@@ -19,7 +18,7 @@ public class MultiCheckActionMode implements ActionMode.Callback
 	 * @param menuRes ActionMode菜单资源
 	 * @param lv MultiCheckListView对象
 	 */
-	public MultiCheckActionMode(MultiCheckActionModeListener listener, int menuRes, MultiCheckListView lv) 
+	public MultiCheckActionMode(MultiCheckListView.MultiCheckActionModeListener listener, int menuRes, MultiCheckListView lv)
 	{
 		super();
 		this.listener = listener;

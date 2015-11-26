@@ -9,7 +9,8 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import dswork.android.lib.core.R;
+import com.rex.dsworkandroidlibrary.R;
+
 
 public class WorkUtil
 {

@@ -13,12 +13,13 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.rex.dsworkandroidlibrary.util.DiskLruCache;
+import com.rex.dsworkandroidlibrary.util.MD5Util;
+
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-import dswork.android.lib.core.util.DiskLruCache.Snapshot;
-import dswork.android.lib.core.util.MD5Util;
 
 public class BitmapLoadTask extends AsyncTask<String, Integer, Bitmap>
 {
@@ -63,10 +64,10 @@ public class BitmapLoadTask extends AsyncTask<String, Integer, Bitmap>
 		
         FileDescriptor fileDescriptor = null;  
         FileInputStream fileInputStream = null;  
-        Snapshot snapShot = null;  
+        DiskLruCache.Snapshot snapShot = null;
         try {  
             // 生成图片URL对应的key  
-            final String key = MD5Util.hashKeyForDisk(imgUrl);  
+            final String key = MD5Util.hashKeyForDisk(imgUrl);
             // 查找key对应的缓存  
             snapShot = BitmapLoader.mDiskLruCache.get(key);  
             if (snapShot == null) {  

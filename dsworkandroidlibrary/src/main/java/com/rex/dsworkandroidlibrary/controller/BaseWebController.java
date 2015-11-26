@@ -1,13 +1,14 @@
 package com.rex.dsworkandroidlibrary.controller;
 
+import com.rex.dsworkandroidlibrary.util.webutil.HttpActionObj;
+import com.rex.dsworkandroidlibrary.util.webutil.HttpResultObj;
+import com.rex.dsworkandroidlibrary.util.webutil.HttpUtil;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-import dswork.android.lib.core.util.webutil.HttpActionObj;
-import dswork.android.lib.core.util.webutil.HttpResultObj;
-import dswork.android.lib.core.util.webutil.HttpUtil;
 
 public abstract class BaseWebController
 {

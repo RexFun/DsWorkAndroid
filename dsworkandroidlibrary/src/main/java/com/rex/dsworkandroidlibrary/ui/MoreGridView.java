@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 
-import dswork.android.lib.core.R;
+import com.rex.dsworkandroidlibrary.R;
+
 
 public class MoreGridView extends HeaderFooterGridView implements OnScrollListener
 {
